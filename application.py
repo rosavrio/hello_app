@@ -2,7 +2,7 @@ from flask import Flask
 
 # print a nice greeting.
 def say_hello(username = "World"):
-    return '<p>Hello %s!</p>\n' % username
+    return '<p>Bye %s!</p>\n' % username
 # some bits of text for the page.
 header_text = '''
 <html>\n<head> <title>EB Flask Test</title> </head>\n<body>'''
@@ -17,7 +17,7 @@ footer_text = '</body>\n</html>'
 application = Flask(__name__)
 application.add_url_rule('/', 'index', (lambda: header_text +
 say_hello() + instructions + footer_text))
-application.add_url_rule('/<username>', 'hello', (lambda username:
+application.add_url_rule('/<username>', 'bye', (lambda username:
 header_text + say_hello(username) + home_link + footer_text))
 # run the app.
 if __name__ == "__main__":
